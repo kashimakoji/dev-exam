@@ -24,6 +24,16 @@
   <strong>備考:</strong>
   <%= @property.memo %>
 </p>
+<hr>
+<h3>最寄り駅（数字</h3>
+<% @nearest_sts.each do |nearest_st| %>
+  <% if @property.nearest_sts.any? %>
+    <%= nearest_st.route_name %>
+    <%= nearest_st.st_name %>
+    <%= nearest_st.on_foot %>
+  <% end %>
+<% end %>
+
 
 <%= link_to '編集', edit_property_path(@property) %> |
 <%= link_to '戻る', properties_path %>
